@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Almutahida Portal | Central Access Hub</title>
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
+      min-height: 100vh;
+      padding: 30px 24px 50px;
+    }
+
+    /* main portal container */
+    .portal-container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* header with logo + company identity */
+    .portal-header {
+      background: linear-gradient(98deg, #0B3B3F 0%, #1C5D5E 100%);
+      border-radius: 32px;
+      padding: 20px 32px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.25);
+      border-bottom: 3px solid #E6B422;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .logo-icon {
+      background: white;
+      border-radius: 20px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+
+    .logo-icon img {
+      height: 52px;
+      width: auto;
+      max-height: 52px;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* fallback style (if logo missing) */
+    .logo-icon .fallback-logo {
+      font-size: 2.2rem;
+      display: none;
+    }
+
+    .company-info h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.3px;
+    }
+
+    .company-info p {
+      color: #E0F2F1;
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+
+    /* welcome section */
+    .welcome-section {
+      background: rgba(255,255,245,0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 18px 28px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(28,93,94,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .welcome-section h2 {
+      color: #0B3B3F;
+      font-weight: 600;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .welcome-section p {
+      color: #2c4b4c;
+      margin-top: 8px;
+      font-size: 1rem;
+    }
+
+    /* grid of website cards */
+    .sites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 30px 0 40px;
+    }
+
+    /* card style */
+    .site-card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px 20px 22px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+      border: 1px solid #eef2f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .site-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+      border-color: #E6B422;
+      background: #FEFCF5;
+    }
+
+    /* icon circle */
+    .card-icon {
+      width: 85px;
+      height: 85px;
+      background: linear-gradient(135deg, #0B3B3F, #1C5D5E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      box-shadow: 0 10px 15px -5px rgba(0,0,0,0.2);
+    }
+
+    .card-icon i {
+      font-size: 42px;
+      color: #FFE7B0;
+    }
+
+    .site-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1C5D5E;
+      margin: 4px 0;
+    }
+
+    .site-description {
+      font-size: 0.85rem;
+      color: #5e6f6d;
+      margin: 5px 0 10px;
+      padding: 0 6px;
+    }
+
+    .open-link-badge {
+      background: #EFF5F4;
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1C5D5E;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+
+    .site-card:hover .open-link-badge {
+      background: #E6B422;
+      color: #2C3E2F;
+    }
+
+    /* add new card (future placeholder) */
+    .add-new-card {
+      background: rgba(255,255,250,0.9);
+      border: 2px dashed #8ba5a2;
+      box-shadow: none;
+      cursor: pointer;
+    }
+
+    .add-new-card .card-icon {
+      background: #cfdfdd;
+    }
+
+    .add-new-card .card-icon i {
+      color: #2c5e5a;
+    }
+
+    .add-new-card h3 {
+      color: #3f6e6b;
+    }
+
+    /* footer */
+    .portal-footer {
+      margin-top: 60px;
+      text-align: center;
+      background: #0B3B3F;
+      border-radius: 24px;
+      padding: 20px;
+      color: #cbe9e4;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* small responsive */
+    @media (max-width: 680px) {
+      .portal-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+      }
+      .company-info h1 {
+        font-size: 1.4rem;
+      }
+      .sites-grid {
+        gap: 18px;
+      }
+      .card-icon {
+        width: 70px;
+        height: 70px;
+      }
+      .card-icon i {
+        font-size: 32px;
+      }
+      .logo-icon img {
+        height: 42px;
+      }
+    }
+
+    /* toast message */
+    .toast-msg {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1C5D5E;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      z-index: 2000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeOutToast 3s forwards;
+      white-space: nowrap;
+    }
+    @keyframes fadeOutToast {
+      0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(-50%) translateY(10px); visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="portal-container">
+  <!-- Header with Almutahida branding & official company logo -->
+  <div class="portal-header">
+    <div class="logo-area">
+      <div class="logo-icon">
+        <!-- COMPANY LOGO: logo.jpg (placed in same folder as this HTML) -->
+        <img src="logo.jpg" alt="Almutahida Packaging Co. Logo" id="companyLogoImg">
+        <!-- fallback text/icon if logo missing -->
+        <span class="fallback-logo">🏭</span>
+      </div>
+      <div class="company-info">
+        <h1>Almutahida Group <span style="font-weight:400;">| Digital Ecosystem</span></h1>
+        <p>Integrated Business Solutions • One Unified Portal</p>
+      </div>
+    </div>
+    <!-- "Corporate Hub" badge removed as requested -->
+  </div>
+
+  <!-- welcome section -->
+  <div class="welcome-section">
+    <h2><i class="fas fa-door-open" style="color:#E6B422;"></i> Welcome to Almutahida Central Portal</h2>
+    <p>Access your business applications instantly. Click any card to open the corresponding system. <br>More platforms will be added seamlessly — stay tuned.</p>
+  </div>
+
+  <!-- Grid of websites (cards) -->
+  <div class="sites-grid" id="dynamicGrid">
+    <!-- 1. Almutahida Clinic System -->
+    <div class="site-card" data-url="https://clinic.almutahida.com.iq" data-name="Almutahida Clinic System">
+      <div class="card-icon"><i class="fas fa-hospital-user"></i></div>
+      <h3>Almutahida Clinic</h3>
+      <div class="site-description">Medical records • Appointments • Occupational health</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+    </div>
+
+    <!-- 2. Employee of the Month (current HR system - local network) -->
+    <div class="site-card" data-url="http://10.40.2.40:6001" data-name="Employee of the Month">
+      <div class="card-icon"><i class="fas fa-trophy"></i></div>
+      <h3>Employee of the Month</h3>
+      <div class="site-description">Complete HR • Nominations • Top 5 • Winners circle</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+    </div>
+
+    <!-- 3. Fleet Management -->
+    <div class="site-card" data-url="https://fleet.almutahida.com.iq" data-name="Fleet Management">
+      <div class="card-icon"><i class="fas fa-truck-moving"></i></div>
+      <h3>Fleet Management</h3>
+      <div class="site-description">Vehicle tracking • maintenance • logistics</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+    </div>
+
+    <!-- 4. On Boarding -->
+    <div class="site-card" data-url="https://onboarding.almutahida.com.iq" data-name="On Boarding">
+      <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+      <h3>On Boarding</h3>
+      <div class="site-description">New hire orientation • digital forms • compliance</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+    </div>
+  </div>
+
+  <!-- Info note: future expansion hint + demo button (to add new sites dynamically) -->
+  <div style="background: #eef3f1; border-radius: 20px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between;">
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <i class="fas fa-plus-circle" style="font-size: 1.8rem; color: #1C5D5E;"></i>
+      <span style="color: #2b5c5a;"><strong>Flexible architecture:</strong> New websites can be added on demand via configuration or future admin panel.</span>
+    </div>
+    <button id="demoAddCardBtn" style="background:#1C5D5E; border: none; color: white; padding: 8px 20px; border-radius: 40px; cursor: pointer; font-weight: 600; display: inline-flex; gap: 8px; align-items: center;"><i class="fas fa-plus"></i> Demo: Add Future Site</button>
+  </div>
+
+  <!-- footer updated: exactly "Designed By- Almutahida IT" -->
+  <div class="portal-footer">
+    <p>Designed By- Almutahida IT</p>
+  </div>
+</div>
+
+<script>
+  // --------------------------------------------------------------
+  // CORE FUNCTIONALITY: handle card click & open website
+  // --------------------------------------------------------------
+  function initPortal() {
+    // select all site cards (including future dynamically added)
+    const cards = document.querySelectorAll('.site-card');
+    
+    cards.forEach(card => {
+      // remove any previous listener to avoid duplicate
+      if (card._listener) {
+        card.removeEventListener('click', card._listener);
+      }
+      const clickHandler = function(e) {
+        e.stopPropagation();
+        const url = card.getAttribute('data-url');
+        const name = card.getAttribute('data-name') || 'System';
+        if (url && url !== '#' && url !== '') {
+          window.open(url, '_blank');
+          showToast(`🔗 Opening ${name}...`);
+        } else {
+          showToast(`⚠️ ${name} : URL not configured yet. Please update the link.`);
+        }
+      };
+      card.addEventListener('click', clickHandler);
+      card._listener = clickHandler;
+    });
+  }
+
+  // helper: toast message (small non-intrusive)
+  function showToast(msg) {
+    let existingToast = document.querySelector('.toast-msg');
+    if(existingToast) existingToast.remove();
+    let toast = document.createElement('div');
+    toast.className = 'toast-msg';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      if(toast && toast.parentNode) toast.remove();
+    }, 2800);
+  }
+
+  // --------------------------------------------------------------
+  // DYNAMIC ADD FUTURE WEBSITE (for scaling up to 10+ systems)
+  // Usage: addNewSite("System Name", "https://domain.com", "fa-icon", "description")
+  // --------------------------------------------------------------
+  function addNewSite(siteName, siteUrl, iconClass, shortDesc) {
+    if (!siteName || !siteUrl) {
+      console.warn("Missing required fields for new site");
+      return false;
+    }
+    const grid = document.getElementById('dynamicGrid');
+    if (!grid) return false;
+
+    // create new card element
+    const newCard = document.createElement('div');
+    newCard.className = 'site-card';
+    newCard.setAttribute('data-url', siteUrl);
+    newCard.setAttribute('data-name', siteName);
+
+    // icon fallback if none provided
+    const finalIcon = (iconClass && iconClass.trim() !== "") ? iconClass : "fa-globe";
+    const description = shortDesc && shortDesc.trim() !== "" ? shortDesc : "New business application · click to access";
+    
+    newCard.innerHTML = `
+      <div class="card-icon"><i class="fas ${finalIcon}"></i></div>
+      <h3>${escapeHtml(siteName)}</h3>
+      <div class="site-description">${escapeHtml(description)}</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+    `;
+
+    // attach click listener
+    const clickHandler = function(e) {
+      const url = newCard.getAttribute('data-url');
+      const name = newCard.getAttribute('data-name');
+      if(url && url !== '#' && url !== '') {
+        window.open(url, '_blank');
+        showToast(`🚀 Opening ${name}...`);
+      } else {
+        showToast(`🔧 ${name} : URL pending configuration.`);
+      }
+    };
+    newCard.addEventListener('click', clickHandler);
+    newCard._listener = clickHandler;
+
+    // add to grid (preserve order)
+    grid.appendChild(newCard);
+    showToast(`✅ "${siteName}" added to portal`);
+    return true;
+  }
+
+  // simple escape for security (XSS safe)
+  function escapeHtml(str) {
+    if(!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if(m === '&') return '&amp;';
+      if(m === '<') return '&lt;';
+      if(m === '>') return '&gt;';
+      return m;
+    }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+      return c;
+    });
+  }
+
+  // Demo button: allows future addition of any website (e.g., you can add new systems like "HR Analytics", "Payroll", etc.)
+  function setupDemoButton() {
+    const demoBtn = document.getElementById('demoAddCardBtn');
+    if(!demoBtn) return;
+    demoBtn.addEventListener('click', () => {
+      const newSiteName = prompt("Enter new system name:", "E.g., Inventory Management");
+      if(!newSiteName) return;
+      const newSiteUrl = prompt("Enter full website URL (include http:// or https://):", "https://inventory.almutahida.com.iq");
+      if(!newSiteUrl) return;
+      const iconChoice = prompt("Font Awesome icon name (optional, e.g., fa-boxes, fa-chart-line, fa-database):", "fa-chart-line");
+      const description = prompt("Short description (optional):", "Real-time analytics & inventory");
+      const iconFinal = (iconChoice && iconChoice.trim() !== "") ? iconChoice.trim() : "fa-link";
+      addNewSite(newSiteName, newSiteUrl, iconFinal, description || "New module available");
+    });
+  }
+
+  // Handle logo image loading: if logo.jpg missing, show fallback text/icon but keep design professional
+  function handleLogoFallback() {
+    const logoImg = document.getElementById('companyLogoImg');
+    const fallbackSpan = document.querySelector('.logo-icon .fallback-logo');
+    if (!logoImg) return;
+    
+    logoImg.onerror = function() {
+      // hide broken image, show fallback icon (industrial emoji)
+      logoImg.style.display = 'none';
+      if (fallbackSpan) {
+        fallbackSpan.style.display = 'inline-flex';
+        fallbackSpan.style.fontSize = '2rem';
+      }
+      console.log("Logo image not found, using fallback icon");
+    };
+    
+    // if image loads successfully, ensure fallback is hidden
+    logoImg.onload = function() {
+      if (fallbackSpan) fallbackSpan.style.display = 'none';
+      logoImg.style.display = 'block';
+    };
+  }
+
+  // Optional: helper to update existing card URL (if needed for future management)
+  function updateCardUrl(cardName, newUrl) {
+    const cards = document.querySelectorAll('.site-card');
+    for(let card of cards) {
+      const nameAttr = card.getAttribute('data-name');
+      if(nameAttr && nameAttr.toLowerCase() === cardName.toLowerCase()) {
+        card.setAttribute('data-url', newUrl);
+        showToast(`🔁 URL updated for ${cardName}`);
+        return true;
+      }
+    }
+    showToast(`Card "${cardName}" not found`);
+    return false;
+  }
+
+  // Expose global portal manager for future usage (admin/console)
+  window.AlmutahidaPortal = {
+    addWebsite: addNewSite,
+    updateWebsiteUrl: updateCardUrl,
+    showToast: showToast,
+    getCurrentSites: () => {
+      const sites = [];
+      document.querySelectorAll('.site-card').forEach(card => {
+        sites.push({
+          name: card.getAttribute('data-name'),
+          url: card.getAttribute('data-url'),
+        });
+      });
+      return sites;
+    }
+  };
+  
+  // Call initialization on load
+  document.addEventListener('DOMContentLoaded', () => {
+    handleLogoFallback();     // ensures logo.jpg is shown or fallback
+    initPortal();            // attach click events to current cards
+    setupDemoButton();       // demo for future site addition
+    console.log("Almutahida Portal Ready — Use window.AlmutahidaPortal.addWebsite('name','url','icon','desc') to add new systems");
+  });
+</script>
+</body>
+</html>
