@@ -11,257 +11,270 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     }
 
     body {
-      background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
+      background: linear-gradient(135deg, #eef2f9 0%, #dce5ef 100%);
       min-height: 100vh;
-      padding: 30px 24px 50px;
+      padding: 24px 16px 40px;
     }
 
-    /* main portal container */
     .portal-container {
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* header with logo + company identity */
+    /* compact header */
     .portal-header {
-      background: linear-gradient(98deg, #0B3B3F 0%, #1C5D5E 100%);
-      border-radius: 32px;
-      padding: 20px 32px;
-      margin-bottom: 40px;
+      background: linear-gradient(105deg, #0a2f33 0%, #1e5f60 100%);
+      border-radius: 24px;
+      padding: 12px 22px;
+      margin-bottom: 28px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.25);
-      border-bottom: 3px solid #E6B422;
+      box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid #E6B422;
     }
 
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .logo-icon {
-      background: white;
-      border-radius: 20px;
-      padding: 8px 16px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 4px 12px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.2s ease;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     .logo-icon img {
-      height: 52px;
+      height: 38px;
       width: auto;
-      max-height: 52px;
+      max-height: 38px;
       display: block;
       object-fit: contain;
     }
 
-    /* fallback style (if logo missing) */
     .logo-icon .fallback-logo {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       display: none;
     }
 
     .company-info h1 {
-      font-size: 1.8rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: white;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.2px;
     }
 
     .company-info p {
-      color: #E0F2F1;
-      font-size: 0.85rem;
-      margin-top: 5px;
+      color: #DFF2F0;
+      font-size: 0.65rem;
+      margin-top: 2px;
     }
 
-    /* welcome section */
+    /* welcome banner - compact */
     .welcome-section {
-      background: rgba(255,255,245,0.85);
-      backdrop-filter: blur(2px);
-      border-radius: 28px;
-      padding: 18px 28px;
-      margin-bottom: 40px;
-      border: 1px solid rgba(28,93,94,0.2);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      background: rgba(255, 255, 248, 0.92);
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(30, 95, 96, 0.2);
     }
 
     .welcome-section h2 {
-      color: #0B3B3F;
+      color: #0a2f33;
       font-weight: 600;
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
     }
 
     .welcome-section p {
-      color: #2c4b4c;
-      margin-top: 8px;
-      font-size: 1rem;
+      color: #2b5f5c;
+      margin-top: 4px;
+      font-size: 0.75rem;
     }
 
-    /* grid of website cards */
+    /* EXTRA SMALL, TIGHT GRID - super compact boxes */
     .sites-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 28px;
-      margin: 30px 0 40px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+      margin: 20px 0 30px;
     }
 
-    /* card style */
+    /* MINI CARD - much smaller */
     .site-card {
       background: white;
-      border-radius: 28px;
-      padding: 24px 20px 22px;
+      border-radius: 20px;
+      padding: 12px 8px 10px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
-      border: 1px solid #eef2f0;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e2ebe9;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 6px;
     }
 
     .site-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.12);
       border-color: #E6B422;
-      background: #FEFCF5;
+      background: #FFFDF7;
     }
 
-    /* icon circle */
+    /* tiny icon circle */
     .card-icon {
-      width: 85px;
-      height: 85px;
-      background: linear-gradient(135deg, #0B3B3F, #1C5D5E);
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(145deg, #0e4348, #1b6f6d);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 8px;
-      box-shadow: 0 10px 15px -5px rgba(0,0,0,0.2);
+      margin-bottom: 2px;
+      box-shadow: 0 5px 10px -4px rgba(0, 0, 0, 0.2);
     }
 
     .card-icon i {
-      font-size: 42px;
-      color: #FFE7B0;
+      font-size: 26px;
+      color: #FFECB3;
     }
 
     .site-card h3 {
-      font-size: 1.5rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      color: #1C5D5E;
-      margin: 4px 0;
+      color: #135c5a;
+      margin: 2px 0 0;
     }
 
     .site-description {
-      font-size: 0.85rem;
-      color: #5e6f6d;
-      margin: 5px 0 10px;
-      padding: 0 6px;
+      font-size: 0.6rem;
+      color: #5f7c79;
+      margin: 0px 0 2px;
+      padding: 0 2px;
+      line-height: 1.25;
+      min-height: 28px;
     }
 
     .open-link-badge {
-      background: #EFF5F4;
-      border-radius: 40px;
-      padding: 8px 18px;
-      font-size: 0.8rem;
+      background: #EFF6F4;
+      border-radius: 30px;
+      padding: 4px 10px;
+      font-size: 0.6rem;
       font-weight: 600;
-      color: #1C5D5E;
+      color: #1b6f6d;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 8px;
+      gap: 6px;
+      margin-top: 2px;
       transition: all 0.2s;
     }
 
     .site-card:hover .open-link-badge {
       background: #E6B422;
-      color: #2C3E2F;
+      color: #1f3a35;
     }
 
-    /* add new card (future placeholder) */
-    .add-new-card {
-      background: rgba(255,255,250,0.9);
-      border: 2px dashed #8ba5a2;
-      box-shadow: none;
+    .maintenance-badge {
+      background: #fae6e5;
+      color: #b13b3b;
+    }
+
+    .site-card:hover .maintenance-badge {
+      background: #d9534f;
+      color: white;
+    }
+
+    /* utility bar - mini */
+    .utility-bar {
+      background: #eef3f1;
+      border-radius: 20px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+
+    .btn-gold {
+      background: #1C5D5E;
+      border: none;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 32px;
       cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      transition: 0.2s;
+      font-size: 0.7rem;
     }
 
-    .add-new-card .card-icon {
-      background: #cfdfdd;
+    .btn-gold:hover {
+      background: #E6B422;
+      color: #0f3a37;
     }
 
-    .add-new-card .card-icon i {
-      color: #2c5e5a;
-    }
-
-    .add-new-card h3 {
-      color: #3f6e6b;
-    }
-
-    /* footer */
     .portal-footer {
-      margin-top: 60px;
+      margin-top: 40px;
       text-align: center;
-      background: #0B3B3F;
-      border-radius: 24px;
-      padding: 20px;
-      color: #cbe9e4;
-      font-size: 0.85rem;
-      font-weight: 500;
+      background: #0a2f33;
+      border-radius: 20px;
+      padding: 12px;
+      color: #cae9e3;
+      font-size: 0.65rem;
     }
 
-    /* small responsive */
-    @media (max-width: 680px) {
-      .portal-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 18px;
-      }
-      .company-info h1 {
-        font-size: 1.4rem;
-      }
+    @media (max-width: 550px) {
       .sites-grid {
-        gap: 18px;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
       }
       .card-icon {
-        width: 70px;
-        height: 70px;
+        width: 46px;
+        height: 46px;
       }
       .card-icon i {
-        font-size: 32px;
+        font-size: 22px;
       }
-      .logo-icon img {
-        height: 42px;
+      .site-card h3 {
+        font-size: 0.85rem;
+      }
+      .company-info h1 {
+        font-size: 1rem;
       }
     }
 
-    /* toast message */
     .toast-msg {
       position: fixed;
-      bottom: 25px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: #1C5D5E;
+      background: #1e5f60;
       color: white;
-      padding: 10px 24px;
-      border-radius: 60px;
-      font-size: 0.85rem;
-      z-index: 2000;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      z-index: 2100;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       animation: fadeOutToast 3s forwards;
       white-space: nowrap;
@@ -269,81 +282,77 @@
     @keyframes fadeOutToast {
       0% { opacity: 1; transform: translateX(-50%) translateY(0); }
       70% { opacity: 1; }
-      100% { opacity: 0; transform: translateX(-50%) translateY(10px); visibility: hidden; }
+      100% { opacity: 0; transform: translateX(-50%) translateY(8px); visibility: hidden; }
     }
   </style>
 </head>
 <body>
 
 <div class="portal-container">
-  <!-- Header with Almutahida branding & official company logo -->
+  <!-- compact header -->
   <div class="portal-header">
     <div class="logo-area">
       <div class="logo-icon">
-        <!-- COMPANY LOGO: logo.jpg (placed in same folder as this HTML) -->
         <img src="logo.jpg" alt="Almutahida Packaging Co. Logo" id="companyLogoImg">
-        <!-- fallback text/icon if logo missing -->
         <span class="fallback-logo">🏭</span>
       </div>
       <div class="company-info">
-        <h1>Almutahida Group <span style="font-weight:400;">| Digital Ecosystem</span></h1>
-        <p>Integrated Business Solutions • One Unified Portal</p>
+        <h1>Almutahida Group <span style="font-weight:400;">| Digital Hub</span></h1>
+        <p>Integrated Business Solutions • Central Access</p>
       </div>
     </div>
-    <!-- "Corporate Hub" badge removed as requested -->
   </div>
 
-  <!-- welcome section -->
+  <!-- slim welcome -->
   <div class="welcome-section">
-    <h2><i class="fas fa-door-open" style="color:#E6B422;"></i> Welcome to Almutahida Central Portal</h2>
-    <p>Access your business applications instantly. Click any card to open the corresponding system. <br>More platforms will be added seamlessly — stay tuned.</p>
+    <h2><i class="fas fa-door-open" style="color:#E6B422; font-size:0.9rem;"></i> Almutahida Central Portal</h2>
+    <p>Access core systems instantly. <strong>Fleet Management</strong> under maintenance — others live.</p>
   </div>
 
-  <!-- Grid of websites (cards) -->
+  <!-- SUPER COMPACT GRID: only 4 boxes, extra small -->
   <div class="sites-grid" id="dynamicGrid">
-    <!-- 1. Almutahida Clinic System -->
-    <div class="site-card" data-url="https://clinic.almutahida.com.iq" data-name="Almutahida Clinic System">
+    <!-- 1. Almutahida Clinic - IP updated -->
+    <div class="site-card" data-url="http://10.40.2.40/" data-name="Almutahida Clinic System" data-maintenance="false">
       <div class="card-icon"><i class="fas fa-hospital-user"></i></div>
       <h3>Almutahida Clinic</h3>
-      <div class="site-description">Medical records • Appointments • Occupational health</div>
-      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+      <div class="site-description">Medical records • Appointments</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
     </div>
 
-    <!-- 2. Employee of the Month (current HR system - local network) -->
-    <div class="site-card" data-url="http://10.40.2.40:6001" data-name="Employee of the Month">
+    <!-- 2. Employee of the Month -->
+    <div class="site-card" data-url="http://10.40.2.40:6001" data-name="Employee of the Month" data-maintenance="false">
       <div class="card-icon"><i class="fas fa-trophy"></i></div>
       <h3>Employee of the Month</h3>
-      <div class="site-description">Complete HR • Nominations • Top 5 • Winners circle</div>
-      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+      <div class="site-description">HR • Nominations • Top 5</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
     </div>
 
-    <!-- 3. Fleet Management -->
-    <div class="site-card" data-url="https://fleet.almutahida.com.iq" data-name="Fleet Management">
+    <!-- 3. Fleet Management - Maintenance -->
+    <div class="site-card" data-url="maintenance" data-name="Fleet Management" data-maintenance="true">
       <div class="card-icon"><i class="fas fa-truck-moving"></i></div>
       <h3>Fleet Management</h3>
-      <div class="site-description">Vehicle tracking • maintenance • logistics</div>
-      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+      <div class="site-description">Vehicle tracking • logistics</div>
+      <div class="open-link-badge maintenance-badge"><i class="fas fa-tools"></i> Maintenance</div>
     </div>
 
     <!-- 4. On Boarding -->
-    <div class="site-card" data-url="https://onboarding.almutahida.com.iq" data-name="On Boarding">
+    <div class="site-card" data-url="https://onboarding.almutahida.com.iq" data-name="On Boarding" data-maintenance="false">
       <div class="card-icon"><i class="fas fa-user-plus"></i></div>
       <h3>On Boarding</h3>
-      <div class="site-description">New hire orientation • digital forms • compliance</div>
-      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+      <div class="site-description">New hire • digital forms</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
     </div>
   </div>
 
-  <!-- Info note: future expansion hint + demo button (to add new sites dynamically) -->
-  <div style="background: #eef3f1; border-radius: 20px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between;">
-    <div style="display: flex; gap: 12px; align-items: center;">
-      <i class="fas fa-plus-circle" style="font-size: 1.8rem; color: #1C5D5E;"></i>
-      <span style="color: #2b5c5a;"><strong>Flexible architecture:</strong> New websites can be added on demand via configuration or future admin panel.</span>
+  <!-- minimal utility section -->
+  <div class="utility-bar">
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <i class="fas fa-layer-group" style="font-size: 1rem; color: #1C5D5E;"></i>
+      <span style="color: #2b5c5a; font-size: 0.7rem;"><strong>Scalable:</strong> Add new apps via demo button</span>
     </div>
-    <button id="demoAddCardBtn" style="background:#1C5D5E; border: none; color: white; padding: 8px 20px; border-radius: 40px; cursor: pointer; font-weight: 600; display: inline-flex; gap: 8px; align-items: center;"><i class="fas fa-plus"></i> Demo: Add Future Site</button>
+    <button id="demoAddCardBtn" class="btn-gold"><i class="fas fa-plus"></i> Add Future Site</button>
   </div>
 
-  <!-- footer updated: exactly "Designed By- Almutahida IT" -->
   <div class="portal-footer">
     <p>Designed By- Almutahida IT</p>
   </div>
@@ -351,166 +360,179 @@
 
 <script>
   // --------------------------------------------------------------
-  // CORE FUNCTIONALITY: handle card click & open website
+  // HANDLE CARD CLICK: maintenance logic + open URLs
   // --------------------------------------------------------------
-  function initPortal() {
-    // select all site cards (including future dynamically added)
+  function handleCardClick(event, card) {
+    event.stopPropagation();
+    const isMaintenance = card.getAttribute('data-maintenance') === 'true';
+    const siteName = card.getAttribute('data-name') || 'System';
+    const url = card.getAttribute('data-url');
+
+    if (isMaintenance || (siteName.toLowerCase().includes('fleet') && url === 'maintenance')) {
+      showToast(`🔧 ${siteName} — Under Maintenance. Please try later.`);
+      return;
+    }
+
+    if (url && url !== '#' && url !== '' && url !== 'maintenance') {
+      window.open(url, '_blank');
+      showToast(`🚀 Opening ${siteName}...`);
+    } else {
+      showToast(`⚠️ ${siteName} : URL not configured.`);
+    }
+  }
+
+  function attachCardListeners() {
     const cards = document.querySelectorAll('.site-card');
-    
     cards.forEach(card => {
-      // remove any previous listener to avoid duplicate
-      if (card._listener) {
-        card.removeEventListener('click', card._listener);
+      if (card._clickHandler) {
+        card.removeEventListener('click', card._clickHandler);
       }
-      const clickHandler = function(e) {
-        e.stopPropagation();
-        const url = card.getAttribute('data-url');
-        const name = card.getAttribute('data-name') || 'System';
-        if (url && url !== '#' && url !== '') {
-          window.open(url, '_blank');
-          showToast(`🔗 Opening ${name}...`);
-        } else {
-          showToast(`⚠️ ${name} : URL not configured yet. Please update the link.`);
-        }
+      const handler = function(e) {
+        handleCardClick(e, card);
       };
-      card.addEventListener('click', clickHandler);
-      card._listener = clickHandler;
+      card.addEventListener('click', handler);
+      card._clickHandler = handler;
     });
   }
 
-  // helper: toast message (small non-intrusive)
   function showToast(msg) {
     let existingToast = document.querySelector('.toast-msg');
-    if(existingToast) existingToast.remove();
-    let toast = document.createElement('div');
+    if (existingToast) existingToast.remove();
+    const toast = document.createElement('div');
     toast.className = 'toast-msg';
     toast.innerText = msg;
     document.body.appendChild(toast);
     setTimeout(() => {
-      if(toast && toast.parentNode) toast.remove();
-    }, 2800);
+      if (toast && toast.parentNode) toast.remove();
+    }, 2500);
   }
 
   // --------------------------------------------------------------
-  // DYNAMIC ADD FUTURE WEBSITE (for scaling up to 10+ systems)
-  // Usage: addNewSite("System Name", "https://domain.com", "fa-icon", "description")
+  // DYNAMIC ADD WEBSITE (only when user clicks button)
   // --------------------------------------------------------------
-  function addNewSite(siteName, siteUrl, iconClass, shortDesc) {
-    if (!siteName || !siteUrl) {
-      console.warn("Missing required fields for new site");
+  function addNewWebsite(systemName, systemUrl, iconClass, shortDesc) {
+    if (!systemName || !systemUrl) {
+      showToast("❌ Missing name or URL");
       return false;
     }
     const grid = document.getElementById('dynamicGrid');
     if (!grid) return false;
 
-    // create new card element
+    const safeName = escapeHtml(systemName);
+    const safeDesc = escapeHtml(shortDesc && shortDesc.trim() !== "" ? shortDesc : "New business application");
+    const finalIcon = (iconClass && iconClass.trim() !== "") ? iconClass : "fa-plug";
+    
     const newCard = document.createElement('div');
     newCard.className = 'site-card';
-    newCard.setAttribute('data-url', siteUrl);
-    newCard.setAttribute('data-name', siteName);
-
-    // icon fallback if none provided
-    const finalIcon = (iconClass && iconClass.trim() !== "") ? iconClass : "fa-globe";
-    const description = shortDesc && shortDesc.trim() !== "" ? shortDesc : "New business application · click to access";
+    newCard.setAttribute('data-url', systemUrl);
+    newCard.setAttribute('data-name', systemName);
+    newCard.setAttribute('data-maintenance', 'false');
     
     newCard.innerHTML = `
       <div class="card-icon"><i class="fas ${finalIcon}"></i></div>
-      <h3>${escapeHtml(siteName)}</h3>
-      <div class="site-description">${escapeHtml(description)}</div>
-      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch System</div>
+      <h3>${safeName}</h3>
+      <div class="site-description">${safeDesc}</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
     `;
-
-    // attach click listener
+    
     const clickHandler = function(e) {
-      const url = newCard.getAttribute('data-url');
-      const name = newCard.getAttribute('data-name');
-      if(url && url !== '#' && url !== '') {
-        window.open(url, '_blank');
-        showToast(`🚀 Opening ${name}...`);
+      const cardUrl = newCard.getAttribute('data-url');
+      const cardName = newCard.getAttribute('data-name');
+      if (cardUrl && cardUrl !== '#' && cardUrl !== '' && cardUrl !== 'maintenance') {
+        window.open(cardUrl, '_blank');
+        showToast(`✨ Opening ${cardName}`);
       } else {
-        showToast(`🔧 ${name} : URL pending configuration.`);
+        showToast(`⚠️ ${cardName}: URL pending`);
       }
     };
     newCard.addEventListener('click', clickHandler);
-    newCard._listener = clickHandler;
-
-    // add to grid (preserve order)
+    newCard._clickHandler = clickHandler;
+    
     grid.appendChild(newCard);
-    showToast(`✅ "${siteName}" added to portal`);
+    showToast(`✅ "${systemName}" added`);
     return true;
   }
 
-  // simple escape for security (XSS safe)
   function escapeHtml(str) {
-    if(!str) return '';
+    if (!str) return '';
     return str.replace(/[&<>]/g, function(m) {
-      if(m === '&') return '&amp;';
-      if(m === '<') return '&lt;';
-      if(m === '>') return '&gt;';
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
       return m;
-    }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-      return c;
     });
   }
 
-  // Demo button: allows future addition of any website (e.g., you can add new systems like "HR Analytics", "Payroll", etc.)
   function setupDemoButton() {
     const demoBtn = document.getElementById('demoAddCardBtn');
-    if(!demoBtn) return;
+    if (!demoBtn) return;
     demoBtn.addEventListener('click', () => {
-      const newSiteName = prompt("Enter new system name:", "E.g., Inventory Management");
-      if(!newSiteName) return;
-      const newSiteUrl = prompt("Enter full website URL (include http:// or https://):", "https://inventory.almutahida.com.iq");
-      if(!newSiteUrl) return;
-      const iconChoice = prompt("Font Awesome icon name (optional, e.g., fa-boxes, fa-chart-line, fa-database):", "fa-chart-line");
-      const description = prompt("Short description (optional):", "Real-time analytics & inventory");
-      const iconFinal = (iconChoice && iconChoice.trim() !== "") ? iconChoice.trim() : "fa-link";
-      addNewSite(newSiteName, newSiteUrl, iconFinal, description || "New module available");
+      const newName = prompt("Enter system name:", "E.g., Inventory");
+      if (!newName) return;
+      const newUrl = prompt("Enter full URL (http/https):", "https://new.almutahida.com.iq");
+      if (!newUrl) return;
+      const iconChoice = prompt("Icon (fa-*):", "fa-chart-line");
+      const desc = prompt("Short description:", "New module");
+      const finalIcon = (iconChoice && iconChoice.trim()) ? iconChoice.trim() : "fa-link";
+      addNewWebsite(newName, newUrl, finalIcon, desc || "Click to access");
     });
   }
 
-  // Handle logo image loading: if logo.jpg missing, show fallback text/icon but keep design professional
+  // Logo fallback
   function handleLogoFallback() {
     const logoImg = document.getElementById('companyLogoImg');
     const fallbackSpan = document.querySelector('.logo-icon .fallback-logo');
     if (!logoImg) return;
-    
     logoImg.onerror = function() {
-      // hide broken image, show fallback icon (industrial emoji)
       logoImg.style.display = 'none';
       if (fallbackSpan) {
         fallbackSpan.style.display = 'inline-flex';
-        fallbackSpan.style.fontSize = '2rem';
+        fallbackSpan.style.fontSize = '1.5rem';
       }
-      console.log("Logo image not found, using fallback icon");
     };
-    
-    // if image loads successfully, ensure fallback is hidden
     logoImg.onload = function() {
       if (fallbackSpan) fallbackSpan.style.display = 'none';
       logoImg.style.display = 'block';
     };
-  }
-
-  // Optional: helper to update existing card URL (if needed for future management)
-  function updateCardUrl(cardName, newUrl) {
-    const cards = document.querySelectorAll('.site-card');
-    for(let card of cards) {
-      const nameAttr = card.getAttribute('data-name');
-      if(nameAttr && nameAttr.toLowerCase() === cardName.toLowerCase()) {
-        card.setAttribute('data-url', newUrl);
-        showToast(`🔁 URL updated for ${cardName}`);
-        return true;
-      }
+    if (logoImg.complete && logoImg.naturalHeight === 0) {
+      logoImg.onerror();
     }
-    showToast(`Card "${cardName}" not found`);
-    return false;
   }
 
-  // Expose global portal manager for future usage (admin/console)
+  // Force clinic exact IP
+  function enforceClinicUrl() {
+    const clinicCard = Array.from(document.querySelectorAll('.site-card')).find(card => card.getAttribute('data-name') === 'Almutahida Clinic System');
+    if (clinicCard) {
+      clinicCard.setAttribute('data-url', 'http://10.40.2.40/');
+    }
+  }
+
+  // Fleet maintenance strictly enforced
+  function enforceFleetMaintenance() {
+    const fleetCard = Array.from(document.querySelectorAll('.site-card')).find(card => card.getAttribute('data-name') === 'Fleet Management');
+    if (fleetCard) {
+      fleetCard.setAttribute('data-maintenance', 'true');
+      fleetCard.setAttribute('data-url', 'maintenance');
+      const badge = fleetCard.querySelector('.open-link-badge');
+      if (badge) {
+        badge.innerHTML = '<i class="fas fa-tools"></i> Maintenance';
+        badge.classList.add('maintenance-badge');
+      }
+      if (fleetCard._clickHandler) {
+        fleetCard.removeEventListener('click', fleetCard._clickHandler);
+      }
+      const fleetHandler = function(e) {
+        e.stopPropagation();
+        showToast(`🔧 Fleet Management — Under Maintenance.`);
+      };
+      fleetCard.addEventListener('click', fleetHandler);
+      fleetCard._clickHandler = fleetHandler;
+    }
+  }
+
+  // expose global helper
   window.AlmutahidaPortal = {
-    addWebsite: addNewSite,
-    updateWebsiteUrl: updateCardUrl,
+    addWebsite: addNewWebsite,
     showToast: showToast,
     getCurrentSites: () => {
       const sites = [];
@@ -518,18 +540,20 @@
         sites.push({
           name: card.getAttribute('data-name'),
           url: card.getAttribute('data-url'),
+          maintenance: card.getAttribute('data-maintenance') === 'true'
         });
       });
       return sites;
     }
   };
-  
-  // Call initialization on load
+
   document.addEventListener('DOMContentLoaded', () => {
-    handleLogoFallback();     // ensures logo.jpg is shown or fallback
-    initPortal();            // attach click events to current cards
-    setupDemoButton();       // demo for future site addition
-    console.log("Almutahida Portal Ready — Use window.AlmutahidaPortal.addWebsite('name','url','icon','desc') to add new systems");
+    handleLogoFallback();
+    enforceClinicUrl();
+    enforceFleetMaintenance();
+    attachCardListeners();
+    setupDemoButton();
+    console.log("✅ Almutahida Portal — 4 compact cards active. Use demo button to expand.");
   });
 </script>
 </body>
