@@ -25,7 +25,6 @@
       margin: 0 auto;
     }
 
-    /* compact header */
     .portal-header {
       background: linear-gradient(105deg, #0a2f33 0%, #1e5f60 100%);
       border-radius: 24px;
@@ -82,7 +81,6 @@
       margin-top: 2px;
     }
 
-    /* welcome banner - compact */
     .welcome-section {
       background: rgba(255, 255, 248, 0.92);
       border-radius: 20px;
@@ -106,7 +104,6 @@
       font-size: 0.75rem;
     }
 
-    /* EXTRA SMALL, TIGHT GRID - super compact boxes */
     .sites-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -114,7 +111,6 @@
       margin: 20px 0 30px;
     }
 
-    /* MINI CARD - much smaller */
     .site-card {
       background: white;
       border-radius: 20px;
@@ -137,7 +133,6 @@
       background: #FFFDF7;
     }
 
-    /* tiny icon circle */
     .card-icon {
       width: 52px;
       height: 52px;
@@ -160,6 +155,7 @@
       font-weight: 700;
       color: #135c5a;
       margin: 2px 0 0;
+      white-space: nowrap;
     }
 
     .site-description {
@@ -200,7 +196,6 @@
       color: white;
     }
 
-    /* utility bar - mini */
     .utility-bar {
       background: #eef3f1;
       border-radius: 20px;
@@ -309,9 +304,9 @@
     <p>Access core systems instantly. <strong>Fleet Management</strong> under maintenance — others live.</p>
   </div>
 
-  <!-- SUPER COMPACT GRID: only 4 boxes, extra small -->
+  <!-- SUPER COMPACT GRID: now 5 cards with short titles -->
   <div class="sites-grid" id="dynamicGrid">
-    <!-- 1. Almutahida Clinic - IP updated -->
+    <!-- 1. Almutahida Clinic -->
     <div class="site-card" data-url="http://10.40.2.40/" data-name="Almutahida Clinic System" data-maintenance="false">
       <div class="card-icon"><i class="fas fa-hospital-user"></i></div>
       <h3>Almutahida Clinic</h3>
@@ -342,20 +337,15 @@
       <div class="site-description">New hire • digital forms</div>
       <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
     </div>
+
+    <!-- 5. NEW: Help Desk (shortened title for better alignment) -->
+    <div class="site-card" data-url="http://10.40.2.48:8000/" data-name="IT Help Desk" data-maintenance="false">
+      <div class="card-icon"><i class="fas fa-headset"></i></div>
+      <h3>Help Desk</h3>
+      <div class="site-description">Support tickets • IT requests</div>
+      <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
+    </div>
   </div>
-<!-- 5. NEW: Almutahida IT Help Desk -->
-<div class="site-card" data-url="http://10.40.2.48:8000/" data-name="IT Help Desk" data-maintenance="false">
-  <div class="card-icon"><i class="fas fa-headset"></i></div>
-  <h3>IT Help Desk</h3>
-  <div class="site-description">Support tickets • IT requests</div>
-  <div class="open-link-badge"><i class="fas fa-external-link-alt"></i> Launch</div>
-</div>
-
-   
-
-
-
-  
 
   <!-- minimal utility section -->
   <div class="utility-bar">
@@ -566,7 +556,7 @@
     enforceFleetMaintenance();
     attachCardListeners();
     setupDemoButton();
-    console.log("✅ Almutahida Portal — 4 compact cards active. Use demo button to expand.");
+    console.log("✅ Almutahida Portal — 5 compact cards active (Help Desk added).");
   });
 </script>
 </body>
